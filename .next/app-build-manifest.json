@@ -1,0 +1,52 @@
+{
+  "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-d9173db9ad4e0e10.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-40634877ae3e8e9d.js",
+      "static/chunks/main-app-fd0e31ddc6eca96e.js",
+      "static/chunks/app/_not-found/page-9bae6dc69a0d2a6c.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-d9173db9ad4e0e10.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-40634877ae3e8e9d.js",
+      "static/chunks/main-app-fd0e31ddc6eca96e.js",
+      "static/css/0011b5c895b376c8.css",
+      "static/chunks/app/layout-2f75c6a7da3c2f0e.js"
+    ],
+    "/admin/dashboard/page": [
+      "static/chunks/webpack-d9173db9ad4e0e10.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-40634877ae3e8e9d.js",
+      "static/chunks/main-app-fd0e31ddc6eca96e.js",
+      "static/chunks/aaea2bcf-d195ea483d4246b6.js",
+      "static/chunks/326-5e8980b0ff25e08e.js",
+      "static/chunks/532-a642f79267d7193f.js",
+      "static/chunks/app/admin/dashboard/page-d3ada97493720442.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-d9173db9ad4e0e10.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-40634877ae3e8e9d.js",
+      "static/chunks/main-app-fd0e31ddc6eca96e.js",
+      "static/chunks/app/page-241510adc48b06f5.js"
+    ],
+    "/auth/page": [
+      "static/chunks/webpack-d9173db9ad4e0e10.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-40634877ae3e8e9d.js",
+      "static/chunks/main-app-fd0e31ddc6eca96e.js",
+      "static/chunks/326-5e8980b0ff25e08e.js",
+      "static/chunks/app/auth/page-313d0e7e3f2f2a22.js"
+    ],
+    "/user/dashboard/page": [
+      "static/chunks/webpack-d9173db9ad4e0e10.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-40634877ae3e8e9d.js",
+      "static/chunks/main-app-fd0e31ddc6eca96e.js",
+      "static/chunks/326-5e8980b0ff25e08e.js",
+      "static/chunks/app/user/dashboard/page-0b0890e19f2e1061.js"
+    ]
+  }
+}

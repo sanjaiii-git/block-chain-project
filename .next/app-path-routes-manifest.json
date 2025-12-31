@@ -1,0 +1,7 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/admin/dashboard/page": "/admin/dashboard",
+  "/page": "/",
+  "/auth/page": "/auth",
+  "/user/dashboard/page": "/user/dashboard"
+}
