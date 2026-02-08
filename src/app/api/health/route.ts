@@ -1,32 +1,51 @@
 import { NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabase'
 
-// This endpoint keeps Supabase active by performing a lightweight query
+// Public health check endpoint - NO AUTH REQUIRED
+// This can be pinged by external monitoring services (UptimeRobot, etc.)
+// to prevent Supabase from pausing
 export async function GET() {
   try {
-    // Perform a simple query to keep the database active
-    const { data, error } = await supabase
-      .from('profiles')
-      .select('count')
-      .limit(1)
+    const startTime = Date.now()
+    
+    // Perform queries to keep database active
+    const [profilesCheck, recordsCheck] = await Promise.all([
+      supabase.from('profiles').select('id').limit(1),
+      supabase.from('land_records').select('id').limit(1)
+    ])
 
-    if (error) {
-      console.error('Health check error:', error)
-      return NextResponse.json(
-        { status: 'error', message: error.message, timestamp: new Date().toISOString() },
-        { status: 500 }
-      )
+    const responseTime = Date.now() - startTime
+
+    const isHealthy = !profilesCheck.error && !recordsCheck.error
+
+    if (!isHealthy) {
+      console.error('Health check issues:', {
+        profiles: profilesCheck.error?.message,
+        records: recordsCheck.error?.message
+      })
     }
 
-    return NextResponse.json({
-      status: 'ok',
-      message: 'Supabase is active',
-      timestamp: new Date().toISOString()
-    })
+    return NextResponse.json(
+      {
+        status: isHealthy ? 'healthy' : 'degraded',
+        database: isHealthy ? 'connected' : 'error',
+        responseTime: `${responseTime}ms`,
+        timestamp: new Date().toISOString(),
+        checks: {
+          profiles: profilesCheck.error ? 'fail' : 'pass',
+          records: recordsCheck.error ? 'fail' : 'pass'
+        }
+      },
+      { status: isHealthy ? 200 : 503 }
+    )
   } catch (error) {
     console.error('Health check failed:', error)
     return NextResponse.json(
-      { status: 'error', message: 'Health check failed', timestamp: new Date().toISOString() },
+      { 
+        status: 'error', 
+        message: error instanceof Error ? error.message : 'Health check failed', 
+        timestamp: new Date().toISOString() 
+      },
       { status: 500 }
     )
   }
