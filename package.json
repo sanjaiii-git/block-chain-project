@@ -15,7 +15,7 @@
     "helia": "^5.5.1",
     "lucide-react": "^0.344.0",
     "multiformats": "^13.4.1",
-    "next": "15.5.3",
+    "next": "15.5.9",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
